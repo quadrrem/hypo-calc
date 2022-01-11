@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ch.quadrrem.hypocalc.MortgageTest" tests="3" skipped="0" failures="1" errors="0" timestamp="2022-01-09T20:38:07" hostname="pop-os" time="0.123">
+  <properties/>
+  <testcase name="mortgage for 1 Mio" classname="ch.quadrrem.hypocalc.MortgageTest" time="0.089"/>
+  <testcase name="mortgage for 0.5 Mio - no second mortgage" classname="ch.quadrrem.hypocalc.MortgageTest" time="0.027">
+    <failure message="io.kotest.assertions.AssertionFailedError: expected:&lt;CHF 670000.00&gt; but was:&lt;CHF 800000.00&gt;" type="io.kotest.assertions.AssertionFailedError">io.kotest.assertions.AssertionFailedError: expected:&lt;CHF 670000.00&gt; but was:&lt;CHF 800000.00&gt;
+	at app//ch.quadrrem.hypocalc.MortgageTest$1$2.invokeSuspend(MortgageTest.kt:28)
+	at app//ch.quadrrem.hypocalc.MortgageTest$1$2.invoke(MortgageTest.kt)
+	at app//ch.quadrrem.hypocalc.MortgageTest$1$2.invoke(MortgageTest.kt)
+	at app//io.kotest.core.spec.style.scopes.StringSpecRootScope$invoke$1.invokeSuspend(StringSpecRootScope.kt:72)
+	at app//io.kotest.core.spec.style.scopes.StringSpecRootScope$invoke$1.invoke(StringSpecRootScope.kt)
+	at app//io.kotest.core.spec.style.scopes.StringSpecRootScope$invoke$1.invoke(StringSpecRootScope.kt)
+	at app//io.kotest.core.spec.style.scopes.RootScopeKt$addTest$1.invokeSuspend(RootScope.kt:36)
+	at app//io.kotest.core.spec.style.scopes.RootScopeKt$addTest$1.invoke(RootScope.kt)
+	at app//io.kotest.core.spec.style.scopes.RootScopeKt$addTest$1.invoke(RootScope.kt)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$innerExecute$1.invokeSuspend(TestCaseExecutor.kt:73)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$innerExecute$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$innerExecute$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.interceptors.CoroutineDebugProbeInterceptor.intercept(CoroutineDebugProbeInterceptor.kt:29)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invokeSuspend(TestCaseExecutor.kt:78)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invokeSuspend(InvocationTimeoutInterceptor.kt:43)
+	at app//io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)
+	at app//io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor$intercept$3.invoke(InvocationTimeoutInterceptor.kt)
+	at app//kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:100)
+	at app//kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:148)
+	at app//kotlinx.coroutines.TimeoutKt.withTimeoutOrNull(Timeout.kt:104)
+	at app//kotlinx.coroutines.TimeoutKt.withTimeoutOrNull-KLykuaI(Timeout.kt:136)
+	at app//io.kotest.engine.test.interceptors.InvocationTimeoutInterceptor.intercept(InvocationTimeoutInterceptor.kt:42)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invokeSuspend(TestCaseExecutor.kt:78)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.TestInvocationInterceptor$intercept$2$3.invokeSuspend(TestInvocationInterceptor.kt:35)
+	at app//io.kotest.engine.test.TestInvocationInterceptor$intercept$2$3.invoke(TestInvocationInterceptor.kt)
+	at app//io.kotest.engine.test.TestInvocationInterceptor$intercept$2$3.invoke(TestInvocationInterceptor.kt)
+	at app//io.kotest.mpp.ReplayKt.replay(replay.kt:18)
+	at app//io.kotest.engine.test.TestInvocationInterceptor$intercept$2.invokeSuspend(TestInvocationInterceptor.kt:30)
+	at app//io.kotest.engine.test.TestInvocationInterceptor$intercept$2.invoke(TestInvocationInterceptor.kt)
+	at app//io.kotest.engine.test.TestInvocationInterceptor$intercept$2.invoke(TestInvocationInterceptor.kt)
+	at app//kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:89)
+	at app//kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:264)
+	at app//io.kotest.engine.test.TestInvocationInterceptor.intercept(TestInvocationInterceptor.kt:29)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invokeSuspend(TestCaseExecutor.kt:78)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invokeSuspend(TimeoutInterceptor.kt:34)
+	at app//io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)
+	at app//io.kotest.engine.test.interceptors.TimeoutInterceptor$intercept$3.invoke(TimeoutInterceptor.kt)
+	at app//kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturnIgnoreTimeout(Undispatched.kt:100)
+	at app//kotlinx.coroutines.TimeoutKt.setupTimeout(Timeout.kt:148)
+	at app//kotlinx.coroutines.TimeoutKt.withTimeout(Timeout.kt:44)
+	at app//kotlinx.coroutines.TimeoutKt.withTimeout-KLykuaI(Timeout.kt:72)
+	at app//io.kotest.engine.test.interceptors.TimeoutInterceptor.intercept(TimeoutInterceptor.kt:33)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invokeSuspend(TestCaseExecutor.kt:78)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.interceptors.BlockedThreadTimeoutInterceptor.intercept(BlockedThreadTimeoutInterceptor.kt:74)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invokeSuspend(TestCaseExecutor.kt:78)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.interceptors.CoroutineLoggingInterceptor.intercept(CoroutineLoggingInterceptor.kt:30)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invokeSuspend(TestCaseExecutor.kt:78)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.interceptors.SoftAssertInterceptor.intercept(SoftAssertInterceptor.kt:27)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invokeSuspend(TestCaseExecutor.kt:78)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.interceptors.AssertionModeInterceptor.intercept(AssertionModeInterceptor.kt:25)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invokeSuspend(TestCaseExecutor.kt:78)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.interceptors.LifecycleInterceptor.intercept(LifecycleInterceptor.kt:50)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invokeSuspend(TestCaseExecutor.kt:78)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.interceptors.EnabledCheckInterceptor.intercept(EnabledCheckInterceptor.kt:31)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invokeSuspend(TestCaseExecutor.kt:78)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor$intercept$2.invokeSuspend(TestCaseExtensionInterceptor.kt:24)
+	at app//io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor$intercept$2.invoke(TestCaseExtensionInterceptor.kt)
+	at app//io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor$intercept$2.invoke(TestCaseExtensionInterceptor.kt)
+	at app//io.kotest.engine.test.TestExtensions.intercept(TestExtensions.kt:154)
+	at app//io.kotest.engine.test.interceptors.TestCaseExtensionInterceptor.intercept(TestCaseExtensionInterceptor.kt:24)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invokeSuspend(TestCaseExecutor.kt:78)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invokeSuspend(CoroutineErrorCollectorInterceptor.kt:29)
+	at app//io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)
+	at app//io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor$intercept$3.invoke(CoroutineErrorCollectorInterceptor.kt)
+	at app//kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:89)
+	at app//kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:165)
+	at app//kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at app//io.kotest.engine.test.interceptors.CoroutineErrorCollectorInterceptor.intercept(CoroutineErrorCollectorInterceptor.kt:28)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invokeSuspend(TestCaseExecutor.kt:78)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.TestCaseExecutor$execute$2$1.invoke(TestCaseExecutor.kt)
+	at app//io.kotest.engine.test.interceptors.CoroutineDispatcherFactoryInterceptor$intercept$4.invokeSuspend(coroutineDispatcherFactoryInterceptor.kt:55)
+	at app//io.kotest.engine.test.interceptors.CoroutineDispatcherFactoryInterceptor$intercept$4.invoke(coroutineDispatcherFactoryInterceptor.kt)
+	at app//io.kotest.engine.test.interceptors.CoroutineDispatcherFactoryInterceptor$intercept$4.invoke(coroutineDispatcherFactoryInterceptor.kt)
+	at app//io.kotest.engine.concurrency.FixedThreadCoroutineDispatcherFactory$withDispatcher$4.invokeSuspend(FixedThreadCoroutineDispatcherFactory.kt:53)
+	at app//kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at app//kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+	at java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+</failure>
+  </testcase>
+  <testcase name="mortgage for 2 Mio - fails for too high mortgage" classname="ch.quadrrem.hypocalc.MortgageTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Jan 09, 2022 9:38:07 PM org.javamoney.moneta.DefaultMonetaryContextFactory createMonetaryContextNonNullConfig
+INFO: Using custom MathContext: precision=256, roundingMode=HALF_EVEN
+Jan 09, 2022 9:38:07 PM org.javamoney.moneta.Money defaultFormat
+INFO: Using default formatter for toString().
+Jan 09, 2022 9:38:07 PM org.javamoney.moneta.Money defaultFormat
+INFO: Using default formatter for toString().
+Jan 09, 2022 9:38:07 PM org.javamoney.moneta.Money defaultFormat
+INFO: Using default formatter for toString().
+Jan 09, 2022 9:38:07 PM org.javamoney.moneta.Money defaultFormat
+INFO: Using default formatter for toString().
+Jan 09, 2022 9:38:07 PM org.javamoney.moneta.Money defaultFormat
+INFO: Using default formatter for toString().
+Jan 09, 2022 9:38:07 PM org.javamoney.moneta.Money defaultFormat
+INFO: Using default formatter for toString().
+Jan 09, 2022 9:38:07 PM org.javamoney.moneta.Money defaultFormat
+INFO: Using default formatter for toString().
+Jan 09, 2022 9:38:07 PM org.javamoney.moneta.Money defaultFormat
+INFO: Using default formatter for toString().
+]]></system-err>
+</testsuite>

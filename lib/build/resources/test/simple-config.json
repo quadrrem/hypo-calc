@@ -1,0 +1,14 @@
+{
+  "mortgage": {
+    "maxPercentage": 0.8,
+    "maxPercentageFirst": 0.67,
+    "interest": 0.01
+  },
+  "affordability": {
+    "maxPercentage": 0.33,
+    "mortgageInterest": 0.05,
+    "upkeepPercentage": 0.01,
+    "repaymentYears": 15
+  },
+  "currency": "CHF"
+}

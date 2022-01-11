@@ -1,0 +1,22 @@
+{
+  "config": {
+    "mortgage": {
+      "maxPercentage": 0.8,
+      "maxPercentageFirst": 0.67,
+      "interest": 1.0
+    },
+    "affordability": {
+      "maxPercentage": 0.33,
+      "mortgageInterest": 5.0,
+      "upkeepPercentage": 1.0,
+      "repaymentPercentage": 1.0
+    }
+  },
+  "ownFunds": {
+    "ownCapital": 100000,
+    "pensionFund": 100000
+  },
+  "salary": {
+    "value": 100000
+  }
+}
