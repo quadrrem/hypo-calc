@@ -24,7 +24,7 @@ class OwnFundsTest : StringSpec({
                     amount = Money.parse("CHF 1000.0")
                 )
             )
-        ).total() shouldBe Money.parse("CHF 2000")
+        ).total shouldBe Money.parse("CHF 2000")
     }
 
     "pension funds can make 50% at most" {
@@ -41,7 +41,7 @@ class OwnFundsTest : StringSpec({
                     amount = Money.parse("CHF 1000.0")
                 )
             )
-        ).total() shouldBe Money.parse("CHF 1500")
+        ).total shouldBe Money.parse("CHF 1500")
     }
 
     "own capital funds can make more than 50%" {
@@ -58,7 +58,7 @@ class OwnFundsTest : StringSpec({
                     amount = Money.parse("CHF 500.0")
                 )
             )
-        ).total() shouldBe Money.parse("CHF 1250")
+        ).total shouldBe Money.parse("CHF 1250")
     }
 
 })

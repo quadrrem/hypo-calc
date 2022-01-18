@@ -2,6 +2,7 @@ package ch.quadrrem.hypocalc
 
 import java.math.BigDecimal
 import java.util.*
+import javax.money.CurrencyUnit
 import javax.money.MonetaryAmount
 import javax.money.format.MonetaryFormats
 import org.javamoney.moneta.Money as JavaMoney
@@ -24,6 +25,8 @@ class Money private constructor(private val money: JavaMoney) : MonetaryAmount b
 
     fun min(other: Money): Money = if (this < other) this else other
 
+    fun max(other: Money): Money = if (this > other) this else other
+
     override fun toString(): String = FORMAT.format(money)
 
     override fun equals(other: Any?): Boolean {
@@ -43,6 +46,9 @@ class Money private constructor(private val money: JavaMoney) : MonetaryAmount b
 
     companion object {
         private val FORMAT = MonetaryFormats.getAmountFormat(Locale("de", "CH"))
+
+        fun zero(currency: CurrencyUnit) = Money(JavaMoney.of(BigDecimal.ZERO, currency))
+
         fun parse(amount: String) = Money(JavaMoney.parse(amount, FORMAT))
     }
 }

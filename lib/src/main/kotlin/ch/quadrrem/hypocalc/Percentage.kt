@@ -11,12 +11,16 @@ data class Percentage(private val value: BigDecimal) : Comparable<Percentage> {
     fun of(amount: Money, amountInPercent: Percentage = HUNDRED_PERCENT): Money =
         amount.divide(amountInPercent.value).multiply(value)
 
+    fun isZero() = BigDecimal.ZERO == value
+
     override fun compareTo(other: Percentage) = value.compareTo(other.value)
 
     override fun toString(): String = FORMAT.format(value)
 
     companion object {
         val HUNDRED_PERCENT = Percentage(BigDecimal.ONE)
+        val ZERO_PERCENT = Percentage(BigDecimal.ZERO)
+
         private val FORMAT = NumberFormat.getPercentInstance()
 
         fun of(percentage: Double) = Percentage(BigDecimal.valueOf(percentage))

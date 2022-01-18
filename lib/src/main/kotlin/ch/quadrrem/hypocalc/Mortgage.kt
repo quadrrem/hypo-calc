@@ -1,5 +1,6 @@
 package ch.quadrrem.hypocalc
 
+import ch.quadrrem.hypocalc.Percentage.Companion.ZERO_PERCENT
 import ch.quadrrem.hypocalc.Percentage.Companion.percentageOf
 
 data class Mortgage private constructor(
@@ -8,7 +9,6 @@ data class Mortgage private constructor(
     private val ownFunds: OwnFunds
 ) {
 
-    private val maxPercentage = config.mortgage.maxPercentage()
     private val maxPercentageFirstMortgage = config.mortgage.maxPercentageFirst()
 
     val percent: Percentage
@@ -22,16 +22,18 @@ data class Mortgage private constructor(
     val yearlyCosts = YearlyCosts(this)
 
     init {
-        val neededMoney = objectValue.value.subtract(ownFunds.total())
-        percent = percentage(objectValue, neededMoney)
+        val neededMoney = objectValue.value.subtract(ownFunds.total)
 
-        if (percent > maxPercentage) {
-            throw RuntimeException("Mortgage percentage $percent is higher than maxPercentage $maxPercentage")
+        if (neededMoney.isNegativeOrZero) {
+            percent = ZERO_PERCENT
+            first = Money.zero(objectValue.value.currency)
+            second = Money.zero(objectValue.value.currency)
+        } else {
+            percent = percentage(objectValue, neededMoney)
+            val (first, second) = splitMortgage(percent, neededMoney)
+            this.first = first
+            this.second = second
         }
-
-        val (first, second) = splitMortgage(percent, neededMoney)
-        this.first = first
-        this.second = second
     }
 
     private fun percentage(objectValue: ObjectValue, mortgage: Money) =
@@ -44,7 +46,8 @@ data class Mortgage private constructor(
     }
 
     fun isAffordable(grossIncome: GrossIncome): Boolean =
-        yearlyCosts.percentageOfIncome(grossIncome) <= config.affordability.maxPercentage()
+        percent <= config.mortgage.maxPercentage() &&
+                yearlyCosts.percentageOfIncome(grossIncome) <= config.affordability.maxPercentage()
 
     companion object {
         fun of(config: Config, objectValue: ObjectValue, ownFunds: OwnFunds) =

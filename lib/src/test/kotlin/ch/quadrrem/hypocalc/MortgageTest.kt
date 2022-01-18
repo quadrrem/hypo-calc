@@ -1,16 +1,15 @@
 package ch.quadrrem.hypocalc
 
 import ch.quadrrem.hypocalc.GrossIncomeMother.GI_100_000
+import ch.quadrrem.hypocalc.GrossIncomeMother.GI_1_000_000
 import ch.quadrrem.hypocalc.ObjectValueMother.OV_0_5_MIO
 import ch.quadrrem.hypocalc.ObjectValueMother.OV_1_MIO
 import ch.quadrrem.hypocalc.ObjectValueMother.OV_2_MIO
 import ch.quadrrem.hypocalc.OwnFundsMother.OF_200_000
-import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.booleans.shouldBeFalse
 import io.kotest.matchers.booleans.shouldBeTrue
 import io.kotest.matchers.shouldBe
-import io.kotest.matchers.string.shouldMatch
 
 class MortgageTest : StringSpec({
 
@@ -34,8 +33,11 @@ class MortgageTest : StringSpec({
     }
 
 
-    "mortgage for 2 Mio - fails for too high mortgage" {
-        shouldThrow<RuntimeException> { Mortgage.of(config, OV_2_MIO, OF_200_000) }
-            .message shouldMatch ".+ is higher than maxPercentage .+"
+    "mortgage for 2 Mio - is never affordable with because of mortgage percentage to high" {
+        val mortgage = Mortgage.of(config, OV_2_MIO, OF_200_000)
+
+        mortgage.first shouldBe Money.parse("CHF 1340000")
+        mortgage.second shouldBe Money.parse("CHF 460000")
+        mortgage.isAffordable(GI_1_000_000).shouldBeFalse()
     }
 })

@@ -14,25 +14,21 @@ fun main() {
 
     (0..20).forEach { it ->
         val objectValue = ObjectValue.parse("CHF ${ONE_MIO + it * HUNDRED_THOUSAND}")
-        runCatching {
-            val mortgage = hypoCalc.calculateMortgageFor(objectValue, ownFunds)
-            val affordable = mortgage.isAffordable(grossIncome)
-            val yearlyCosts = mortgage.yearlyCosts
+        val mortgage = hypoCalc.calculateMortgageFor(objectValue, ownFunds)
+        val affordable = mortgage.isAffordable(grossIncome)
+        val yearlyCosts = mortgage.yearlyCosts
 
-            println("-".repeat(10))
-            println("ObjectValue: $objectValue")
-            println("Mortgage:")
-            println("---------")
-            println("Total: ${mortgage.total}")
-            println("First: ${mortgage.first}")
-            println("Second: ${mortgage.second}")
-            println("Percent of ObjectValue: ${mortgage.percent}")
-            println()
-            println("Affordable: ${if (affordable) "Yes" else "No"}")
-            println("Yearly Costs: ${yearlyCosts.total()}")
-            println("Percent of GrossIncome: ${yearlyCosts.percentageOfIncome(grossIncome)}")
-        }.onFailure { t ->
-            println("Mortgage for Object with Value $objectValue not possible: ${t.message}")
-        }
+        println("-".repeat(10))
+        println("ObjectValue: $objectValue")
+        println("Mortgage:")
+        println("---------")
+        println("Total: ${mortgage.total}")
+        println("First: ${mortgage.first}")
+        println("Second: ${mortgage.second}")
+        println("Percent of ObjectValue: ${mortgage.percent}")
+        println()
+        println("Affordable: ${if (affordable) "Yes" else "No"}")
+        println("Yearly Costs: ${yearlyCosts.total()}")
+        println("Percent of GrossIncome: ${yearlyCosts.percentageOfIncome(grossIncome)}")
     }
 }
